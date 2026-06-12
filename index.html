@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Richard Blume | Strategic Advisory</title>
+  <title>Blume Advisors | Strategic Advisory</title>
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/blume-advisors-icon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/blume-advisors-icon-180.png" />
   <style>
     /* ── TOKENS ─────────────────────────────────────── */
     :root {
@@ -97,14 +100,42 @@
     }
 
     .nav__logo {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 400;
-      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      flex-shrink: 0;
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0;
       color: var(--text);
+      transition: opacity var(--transition);
+    }
+    .nav__logo:hover { opacity: 0.85; }
+    .nav__logo img {
+      height: 38px;
+      width: 38px;
+      object-fit: contain;
+      border-radius: 8px;
       flex-shrink: 0;
     }
-    .nav__logo span { color: var(--accent); }
+    .nav__logo-text {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      line-height: 1.2;
+      text-align: left;
+    }
+    .nav__logo-text span {
+      display: block;
+      font-size: 0.68rem;
+      font-family: var(--font-body);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 0.15rem;
+    }
 
     .nav__links { display: flex; gap: 0.25rem; }
     .nav__links button {
@@ -223,6 +254,19 @@
       padding: 80px clamp(1.25rem, 5vw, 4rem) 60px;
       max-width: var(--max-w);
       margin: 64px auto 0;
+    }
+
+    .hero__brand-logo {
+      max-width: clamp(140px, 22vw, 200px);
+      margin-bottom: 1.5rem;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: 0 8px 32px var(--shadow);
+    }
+    .hero__brand-logo img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .hero__eyebrow {
@@ -1020,9 +1064,19 @@
     }
     .footer-inner p { font-size: 0.8rem; color: var(--text-3); }
     .footer__brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
       font-family: var(--font-display);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--text-2);
+    }
+    .footer__brand img {
+      height: 32px;
+      width: 32px;
+      object-fit: contain;
+      border-radius: 6px;
+      flex-shrink: 0;
     }
 
     /* ── RESPONSIVE ──────────────────────────────────── */
@@ -1083,7 +1137,10 @@
 
 <!-- NAV -->
 <nav class="nav" id="navbar">
-  <div class="nav__logo">Richard <span>Blume</span></div>
+  <button class="nav__logo" onclick="showPage('home', null)" aria-label="Blume Advisors home">
+    <img src="assets/blume-advisors-icon-256.png" alt="" width="38" height="38" />
+    <span class="nav__logo-text">Blume Advisors<span>Strategic Advisory</span></span>
+  </button>
 
   <ul class="nav__links" id="navLinks">
     <li><button class="active" onclick="showPage('home', this)">Home</button></li>
@@ -1123,6 +1180,9 @@
   <div id="page-home" class="fade-in">
     <div class="hero">
       <div class="hero__text">
+        <div class="hero__brand-logo">
+          <img src="assets/blume-advisors-logo-full.png" alt="Blume Advisors" width="200" height="200" />
+        </div>
         <p class="hero__eyebrow">Strategic Advisory</p>
         <h1 class="hero__heading">
           Four decades of <em>steel</em><br>industry expertise
@@ -1761,7 +1821,10 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <p class="footer__brand">Blume Advisors</p>
+      <p class="footer__brand">
+        <img src="assets/blume-advisors-icon-32.png" alt="" width="32" height="32" />
+        Blume Advisors
+      </p>
       <p>Strategic Advisory · Charlotte, NC · <a href="mailto:Rblume@blumeadvisors.com" style="color:var(--accent)">Rblume@blumeadvisors.com</a></p>
       <p>© 2025 Blume Advisors. All rights reserved.</p>
     </div>
