@@ -3,7 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blume Advisors | Strategic Advisory</title>
+  <title>Blume Advisors | Industrial Commercialization Experts</title>
+  <meta name="description" content="Blume Advisors helps industrial and metals organizations validate markets, develop customers, and make informed capital and growth decisions. Led by Rick Blume, 40+ years of enterprise leadership." />
+  <link rel="canonical" href="https://www.blumeadvisors.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.blumeadvisors.com/" />
+  <meta property="og:title" content="Blume Advisors | Industrial Commercialization Experts" />
+  <meta property="og:description" content="Market validation, customer development, and commercialization strategies for industrial organizations. Build Customers Before Capacity™." />
+  <meta property="og:image" content="https://www.blumeadvisors.com/assets/blume-logo-wordmark.png" />
+  <meta property="og:site_name" content="Blume Advisors" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blume Advisors | Industrial Commercialization Experts" />
+  <meta name="twitter:description" content="Market validation, customer development, and commercialization strategies for industrial organizations." />
+  <meta name="twitter:image" content="https://www.blumeadvisors.com/assets/blume-logo-wordmark.png" />
   <link rel="icon" href="assets/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/blume-logo-icon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/blume-logo-icon-180.png" />
@@ -1066,13 +1078,21 @@
       padding: 2.5rem 0;
     }
     .footer-inner {
-      display: flex;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
+      gap: 1rem 2rem;
     }
-    .footer-inner p { font-size: 0.8rem; color: var(--text-3); }
+    .footer-inner p {
+      font-size: 0.8rem;
+      color: var(--text-3);
+      margin: 0;
+    }
+    .footer-inner a {
+      color: var(--accent);
+      transition: opacity var(--transition);
+    }
+    .footer-inner a:hover { opacity: 0.75; }
     .footer__brand {
       display: flex;
       align-items: center;
@@ -1080,6 +1100,7 @@
       font-family: var(--font-display);
       font-size: 0.95rem;
       color: var(--text-2);
+      white-space: nowrap;
     }
     .footer__brand img {
       height: 36px;
@@ -1089,6 +1110,16 @@
       flex-shrink: 0;
       background: #fff;
       padding: 2px;
+    }
+    .footer__meta {
+      line-height: 1.6;
+      text-align: center;
+      justify-self: center;
+    }
+    .footer__copy {
+      white-space: nowrap;
+      text-align: right;
+      justify-self: end;
     }
 
     /* ── RESPONSIVE ──────────────────────────────────── */
@@ -1127,10 +1158,18 @@
       .service-card:last-child:nth-child(3n+1) { grid-column: 2; }
     }
 
+    @media (max-width: 900px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+        justify-items: start;
+      }
+      .footer__meta { text-align: left; justify-self: start; }
+      .footer__copy { text-align: left; justify-self: start; white-space: normal; }
+    }
+
     @media (max-width: 560px) {
       .hero__actions { flex-direction: column; }
       .btn { justify-content: center; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
       .page-intro__stats { flex-direction: column; gap: 1.25rem; }
     }
 
@@ -1828,8 +1867,13 @@
         <img src="assets/blume-logo-icon-64.png" alt="" width="36" height="36" />
         Blume Advisors
       </p>
-      <p>Strategic Advisory · Charlotte, NC · <a href="mailto:Rblume@blumeadvisors.com" style="color:var(--accent)">Rblume@blumeadvisors.com</a></p>
-      <p>© 2025 Blume Advisors. All rights reserved.</p>
+      <p class="footer__meta">
+        Strategic Advisory · Charlotte, NC ·
+        <a href="mailto:Rblume@blumeadvisors.com">Rblume@blumeadvisors.com</a> ·
+        <a href="tel:+17045757440">704-575-7440</a> ·
+        <a href="https://www.linkedin.com/in/rick-blume-dba-a5166b13" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </p>
+      <p class="footer__copy">© 2026 Blume Advisors LLC. All rights reserved.</p>
     </div>
   </div>
 </footer>
@@ -1858,6 +1902,7 @@
 
     if (fromMobile) toggleMenu();
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (history.replaceState) history.replaceState(null, '', '#' + id);
   }
 
   let menuOpen = false;
