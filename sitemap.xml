@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.blumeadvisors.com/articles/why-strategy-dies-after-the-off-site.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.blumeadvisors.com/articles/when-employees-know-they-matter.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
